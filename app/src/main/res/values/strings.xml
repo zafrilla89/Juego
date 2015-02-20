@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Atrapa Monedas</string>
+    <string name="title_activity_jugar">ATRAPA MONEDAS</string>
+    <string name="atrapa_monedas">ATRAPA MONEDAS</string>
+    <string name="Jugar">JUGAR</string>
+    <string name="Salir">SALIR</string>
+    <string name="title_activity_puntuacion">Puntuacion</string>
+    <string name="monedasganadas">MONEDAS GANADAS:</string>
+    <string name="monedasperdidas">MONEDAS PERDIDAS:</string>
+    <string name="puntos">PUNTOS:</string>
+    <string name="menu">MENU</string>
+    <string name="puntuacionmaxima">PUNTUACIÓN MÁXIMA:</string>
+
+</resources>
