@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name="com.izv.android.atrapamonedas.Jugar"
             android:label="@string/title_activity_jugar" >
         </activity>

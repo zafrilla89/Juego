@@ -73,7 +73,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
                     }
                 }
                 bombas[i].setPosicionAleatorio(velocidadbomba);
-                while (bombas[i].colisiona(moneda,-50)){
+                while (bombas[i].colisiona(moneda,-30)){
                     bombas[i].setPosicionAleatorio(velocidadbomba);
                 }
             }
@@ -158,7 +158,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
         Bomba.setDimension(ancho,alto);
         for (int i=0;i<bombas.length;i++) {
             bombas[i].setPosicionAleatorio(velocidadbomba);
-            while (bombas[i].colisiona(moneda,-50)){
+            while (bombas[i].colisiona(moneda,-30)){
                 bombas[i].setPosicionAleatorio(velocidadbomba);
             }
         }
