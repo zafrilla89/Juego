@@ -40,8 +40,7 @@ public class Principal extends Activity {
         this.finish();
     }
 
-    public void onActivityResult(int requestCode,
-                                 int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK &&
                 requestCode == FINPARTIDA) {
             ganadas = data.getIntExtra("ganadas", 0);
@@ -61,7 +60,6 @@ public class Principal extends Activity {
             i.putExtra("perdidas",perdidas);
             startActivity(i);
         }
-
     }
 
 }

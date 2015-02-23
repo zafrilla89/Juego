@@ -13,40 +13,19 @@ public class Saco {
     private Bitmap bmp;
     private int ancho, alto;
     private float ejeY = 0;
-    private int direccionY;
     private float ejeX = 0;
-    private int direccionX;
     private static int anchoMax = 0, altoMax = 0;
 
     public Saco(Bitmap bmp) {
         this.bmp = bmp;
         this.ancho = bmp.getWidth();
         this.alto = bmp.getHeight();
-        setPosicion(); //Para que se vaya a la posición 0,0
-        setMovimiento();
+        setPosicion();
     }
 
     public boolean tocado(float x, float y) {
-        return x > ejeX && x < ejeX + ancho && //esta en la posición x desde donde empieza la figura hasta donde acaba
+        return x > ejeX && x < ejeX + ancho &&
                 y > ejeY && y < ejeY + alto;
-    }
-
-    public void eliminar() {
-        direccionX = 0;
-        direccionY = 0;
-        ejeX = 0;
-        ejeY = 0;
-    }
-
-    public void setMovimiento() {
-        Random rnd = new Random();
-
-        direccionX = rnd.nextInt(12) - 5; //velocidad aleatoria
-        if (direccionX == 0)
-            direccionX = 2;
-        direccionY = rnd.nextInt(12) - 5;  //velocidad aleatoria
-        if (direccionY == 0)
-            direccionY = 2;
     }
 
     public static void setDimension(int ancho, int alto) {
@@ -63,7 +42,6 @@ public class Saco {
         ejeX = 0;
         ejeY = 0;
     }
-
 
     public void dibujar(Canvas canvas) {
         canvas.drawBitmap(bmp, ejeX, ejeY, null);

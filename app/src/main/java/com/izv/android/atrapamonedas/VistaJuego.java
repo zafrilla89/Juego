@@ -29,6 +29,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
     private int monedasperdidas=0;
     private int velocidad=5, velocidadbomba=5;
     private Context context;
+    private boolean mover=false;
 
     public VistaJuego(Context contexto){
         super(contexto);
@@ -96,10 +97,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
                 ((Activity) context).finish();
             }
         }
-
     }
-
-    private boolean mover=false;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -137,7 +135,6 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
         return true;
     }
 
-
     /*******************************************************************************************/
     /*     interfaz callback                                                                   */
     /*******************************************************************************************/
@@ -153,7 +150,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
     public void surfaceChanged (SurfaceHolder holder, int format, int width, int height) {
         alto=height;
         ancho=width;
-        Moneda.setDimension(ancho, alto); //un solo espacio para todas las figuras
+        Moneda.setDimension(ancho, alto);
         moneda.setPosicionAleatorio(velocidad);
         Bomba.setDimension(ancho,alto);
         for (int i=0;i<bombas.length;i++) {
@@ -164,7 +161,6 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
         }
         Saco.setDimension(ancho,alto);
         saco.setPosicion(0, alto-saco.getAlto());
-
     }
 
     @Override
@@ -174,7 +170,7 @@ public class VistaJuego  extends SurfaceView implements SurfaceHolder.Callback  
 
     public void pararhebra(){
         boolean reintentar = true;
-        hebraJuego.setFuncionando(false); //La hebra se para
+        hebraJuego.setFuncionando(false);
         while (reintentar) {
             try {
                 hebraJuego.join();

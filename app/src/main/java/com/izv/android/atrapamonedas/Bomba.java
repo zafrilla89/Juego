@@ -14,7 +14,6 @@ public class Bomba {
     private int ejeY = 0;
     private int direccionY;
     private int ejeX = 0;
-    private int direccionX;
     private static int anchoMax=0, altoMax=0;
 
     public Bomba(Bitmap bmp) {
@@ -24,28 +23,12 @@ public class Bomba {
         setPosicion(); //Para que se vaya a la posición 0,0
     }
 
-    public boolean tocado(float x, float y){
-        return x > ejeX && x < ejeX + ancho && //esta en la posición x desde donde empieza la figura hasta donde acaba
-                y > ejeY && y < ejeY + alto;
-    }
-
-    public void eliminar(){
-        direccionX = 0;
-        direccionY =0;
-        ejeX = 0;
-        ejeY = 0;
-    }
-
 
     public static void setDimension(int ancho, int alto){
         anchoMax = ancho;
         altoMax = alto;
     }
 
-    public void setPosicion(int x, int y){
-        ejeX = x;
-        ejeY = y;
-    }
 
     public void setPosicion(){ //para calcular la posicion
         ejeX = 0;
@@ -57,14 +40,12 @@ public class Bomba {
         ejeX = ancho + rnd.nextInt(anchoMax-ancho*2);
         ejeY = 0;
         direccionY=velocidad;
-
     }
 
     public void dibujar(Canvas canvas) {
         movimiento();
         canvas.drawBitmap(bmp, ejeX, ejeY, null);
     }
-
 
     public boolean colisiona(Moneda m, int delta){
 
